@@ -12,8 +12,21 @@ import { NotImplementedError } from '../extensions/index.js';
  *
  */
 export default function deleteDigit(n) {
-  let arr = String(n).split('').map(Number);
-  let minIndex = arr.indexOf(Math.min(...arr));
-  arr.splice(minIndex, 1);
-  return Number(arr.join(''));
+  let arr = String(n).split('');
+  let result = 0;
+
+  for (let i = 0; i < arr.length; i++)
+  {
+    let newArr = [];
+    let arr1 = arr.slice(0, i);
+    let arr2 = arr.slice(i + 1, arr.length);
+    newArr = newArr.concat( arr1, arr2);
+ 
+    if (result < Number(newArr.join('')))
+    {
+      result = Number(newArr.join(''));
+    }   
+  }
+  
+   return result;
 }
