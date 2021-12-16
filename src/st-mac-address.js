@@ -15,5 +15,5 @@ import { NotImplementedError } from '../extensions/index.js';
  *
  */
 export default function isMAC48Address(n) {
-  return /^(([A-F0-9]{2}[-]){5}[A-F0-9]{2})/.test(n);
+  return /^(([A-F0-9]{2}[-]){5}[A-F0-9]{2})$/.test(n);
 }
